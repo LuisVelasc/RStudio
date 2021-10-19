@@ -31,10 +31,6 @@ head(murders)
     ## 5 California  CA   West   37253956  1257
     ## 6   Colorado  CO   West    5029196    65
 
-``` r
-murders=murders %>% mutate(rate=total/population/100000)
-```
-
 ## Murder rate by state
 
 We note the large state to state variability by generating a barplot
