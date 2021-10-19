@@ -2,7 +2,7 @@
 title: "Report on Gun Murders"
 author: "Rafael Irizarry"
 date: "`r format(Sys.Date())`"
-output: pdf_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +25,6 @@ and load the data we already wrangled:
 ```{r}
 data(murders)
 head(murders)
-murders=murders %>% mutate(rate=total/population/100000)
 ```
 
 ## Murder rate by state 
@@ -33,6 +32,7 @@ murders=murders %>% mutate(rate=total/population/100000)
 We note the large state to state variability by generating a barplot showing the murder rate by state:
 
 ```{r murder-rate-by-state, echo=FALSE}
+murders=murders %>% mutate(rate=total/population/100000)
 murders %>% mutate(abb = reorder(abb, rate)) %>%
   ggplot(aes(abb, rate)) +
   geom_bar(width = 0.5, stat = "identity", color = "black") +
