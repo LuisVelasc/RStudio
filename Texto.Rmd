@@ -2,7 +2,7 @@
 title: "Report on Gun Murders"
 author: "Rafael Irizarry"
 date: "`r format(Sys.Date())`"
-output: github_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
