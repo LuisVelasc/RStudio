@@ -17,12 +17,15 @@ We are going to use the following library:
 
 ```{r loading-libs, message=FALSE}
 library(tidyverse)
+library(dslabs)
 ```
   
 and load the data we already wrangled:
 
 ```{r}
-load("rdas/murders.rda")
+data(murders)
+head(murders)
+murders=murders %>% mutate(rate=total/population/100000)
 ```
 
 ## Murder rate by state 
